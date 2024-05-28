@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLOQUE SEU DINHEIRO NA CRESOL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="https://rr2---sn-bg0eznsk.googlevideo.com/videoplayback?expire=1716946593&ei=QDJWZoDQOJGokucPkYyB6AU&ip=45.139.39.178&id=o-AISHBTwwQWDbzmWyuI-QA1UbEC5FE86q3WegjL7Mm-ms&itag=137&aitags=134%2C136%2C137%2C160&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AWRWj2QesiYzELn3mmwe4oZ6-OZtEadQL4tLAccnDc62HnfU-Jlj2jgwL7jrA29NVTafXSp2pNUoR6TY&spc=UWF9fzzSztwGYu7C7YaSxaxAqxk5IGDzkMVwjZdJXVc4kLRxPcFBUv-L8PRB&vprv=1&svpuc=1&mime=video%2Fmp4&ns=CQvPLlR7eoqhSQUzJ3zZ5LgQ&rqh=1&gir=yes&clen=81553281&dur=244.143&lmt=1704284405754973&keepalive=yes&c=WEB&sefc=1&txp=1218224&n=00sk7vXZwILErg&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRgIhANgDVWm8HM5YRvFWNkJOdaCyZZr5NInMjv3FC9GVbtnfAiEAx1rNFJInBJSX_Id2CObC26PPfbb6rVIUquZzt_fGrls%3D&redirect_counter=1&cm2rm=sn-ab5ee776&fexp=24350476&req_id=124ba6238c43a3ee&cms_redirect=yes&mh=UG&mip=2804:d55:46f2:9800:d35:182b:872a:40c5&mm=34&mn=sn-bg0eznsk&ms=ltu&mt=1716935071&mv=m&mvi=2&pl=42&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AHWaYeowRQIhAOmHWDqelhCVRn4b9w1BfNu911MiNa6m2xstbv0Y68CaAiBp65fFx8d3FroGkypAQDAnGu2S78Eyf6B2cLPxOMJZrg%3D%3D" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+    <div class="container">
+        <h1>
+            <span class="material-symbols-outlined">payments</span>
+            Sua conta CRESOL
+        </h1>
+        <form id="accountForm">
+            <label for="agencia"><span class="material-symbols-outlined">apartment</span> Número da Agência:</label>
+            <input type="text" id="agencia" required>
+            <label for="conta"><span class="material-symbols-outlined">description</span> Número da Conta:</label>
+            <input type="number" id="conta" required>
+            <label for="nome"><span class="material-symbols-outlined">person</span> Seu Nome:</label>
+            <input type="text" id="nome" required>
+            <button type="submit"><span class="material-symbols-outlined">send</span> Abrir Conta</button>
+        </form>
+
+        <div id="accountInfo" style="display: none;">
+            <h2><span class="material-symbols-outlined">info</span> Resumo da Conta</h2>
+            <p id="accountDetails"></p>
+            <p>Saldo atual: R$ <span id="saldo">2456.90</span></p>
+            <div class="operations">
+                <button onclick="showOperation('saque')"><span class="material-symbols-outlined">attach_money</span> Sacar</button>
+                <button onclick="showOperation('deposito')"><span class="material-symbols-outlined">account_balance_wallet</span> Depositar</button>
+            </div>
+            <div id="operationForm" style="display: none;">
+                <label id="operationLabel"></label>
+                <input type="number" id="operationValue">
+                <button onclick="performOperation()"><span class="material-symbols-outlined">check</span> Confirmar</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
